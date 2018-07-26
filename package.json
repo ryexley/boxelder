@@ -1,0 +1,29 @@
+{
+  "name": "react-responsive-menu",
+  "version": "0.0.1",
+  "description": "React component providing a responsive menu implementation",
+  "main": "src/index.js",
+  "author": "Sparkbox",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "npx styleguidist server"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.54",
+    "@babel/preset-env": "^7.0.0-beta.54",
+    "@babel/preset-react": "^7.0.0-beta.54",
+    "babel-loader": "^8.0.0-beta",
+    "emotion": "^9.2.6",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-styleguidist": "^7.1.0",
+    "webpack": "^4.16.2"
+  },
+  "peerDependencies": {
+    "emotion": "^9.2.6",
+    "react": "^16.4.1"
+  }
+}
