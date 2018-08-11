@@ -11,6 +11,9 @@ import {
   moreMenuItemClass
 } from "./style";
 
+/**
+ * Priority+ navigation menu component
+ */
 export class PriorityPlusNav extends Component {
   static propTypes = {
     /** Custom class for the menu */

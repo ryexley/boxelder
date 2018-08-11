@@ -1,15 +1,19 @@
 {
   "name": "@ryexley/boxelder",
-  "version": "0.0.1",
+  "version": "0.0.0-development",
   "description": "React Priority+ navigation menu component",
   "main": "src/index.js",
   "author": "Bob Yexley",
   "license": "MIT",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "npx styleguidist server",
     "lint": "eslint --fix --cache ./src",
-    "prettify": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx)'"
+    "prettify": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx)'",
+    "release": "semantic-release"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.54",
@@ -18,6 +22,7 @@
     "@babel/preset-react": "^7.0.0-beta.54",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta",
+    "conventional-changelog-eslint": "^3.0.0",
     "emotion": "^9.2.6",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
@@ -33,10 +38,15 @@
     "react-dom": "^16.4.1",
     "react-styleguidist": "^7.1.0",
     "react-transition-group": "^2.4.0",
+    "semantic-release": "^15.9.8",
     "webpack": "^4.16.2"
   },
   "peerDependencies": {
     "emotion": "^9.2.6",
     "react": "^16.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryexley/boxelder.git"
   }
 }
