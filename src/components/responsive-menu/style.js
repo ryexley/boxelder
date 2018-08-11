@@ -1,5 +1,8 @@
 import { css } from "emotion";
 
+const transitionAttribute = (attribute, time = 250) =>
+  `${attribute} ${time}ms ease-in-out`;
+
 export const responsiveMenuStyle = ({ height }) => ({
   height,
   padding: "0 1rem",
@@ -24,9 +27,6 @@ export const visibleMenuItemsClass = css(visibleMenuItemsStyle);
 export const menuToggleStyle = {};
 
 export const menuToggleClass = css(menuToggleStyle);
-
-const transitionAttribute = (attribute, time = 250) =>
-  `${attribute} ${time}ms ease-in-out`;
 
 export const moreMenuItemsContainerStyle = ({
   offsetTop = 0,

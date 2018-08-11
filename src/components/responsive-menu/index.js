@@ -1,8 +1,7 @@
-// adapted from https://codepen.io/zammer/pen/pbxJdo
-
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { classList, throttle } from "../../util";
+import { Fade } from "../animations/fade";
 import { MenuToggle } from "../menu-toggle";
 import {
   responsiveMenuClass,
@@ -70,7 +69,7 @@ export class ResponsiveMenu extends Component {
     this.renderMenuToggle = this.renderMenuToggle.bind(this);
     this.toggleMoreMenuItems = this.toggleMoreMenuItems.bind(this);
     this.sortMenuItems = this.sortMenuItems.bind(this);
-    this.navResizeHandler = throttle(this.sortMenuItems, 250);
+    this.navResizeHandler = throttle(this.sortMenuItems, 200);
     this.calculatePriorityItemCount = this.calculatePriorityItemCount.bind(
       this
     );
@@ -148,7 +147,7 @@ export class ResponsiveMenu extends Component {
     this.setState(({ menuToggleActive }) => ({
       priorityMenuItems,
       moreMenuItems,
-      showMenuToggle: moreMenuItems.length,
+      showMenuToggle: !!moreMenuItems.length,
       menuToggleActive: !!(menuToggleActive && moreMenuItems.length), // prettier-ignore
       showMoreMenuItems: !!(menuToggleActive && moreMenuItems.length) // prettier-ignore
     }));
@@ -181,29 +180,32 @@ export class ResponsiveMenu extends Component {
   }
 
   renderMoreMenuItems() {
-    const {
-      height,
-      dropdownMenuMinWidth,
-      moreMenuItemsClassName,
-      fullWidthDropdownMenuBreak
-    } = this.props;
     const { moreMenuItems, showMoreMenuItems } = this.state;
-    const menuClasses = classList(
-      moreMenuItemsContainerClass({
-        offsetTop: height,
-        fullWidthBreak: fullWidthDropdownMenuBreak
-      }),
-      moreMenuItemsClassName,
-      !showMoreMenuItems ? "hidden" : null
-    );
-    const menuItemClasses = classList(
-      menuItemClass({ height, minWidth: dropdownMenuMinWidth }),
-      moreMenuItemClass
-    );
 
-    const menuItems = () => {
-      if (moreMenuItems.length) {
-        return moreMenuItems.map((item, index) => (
+    if (moreMenuItems.length) {
+      const {
+        height,
+        dropdownMenuMinWidth,
+        moreMenuItemsClassName,
+        fullWidthDropdownMenuBreak
+      } = this.props;
+
+      const menuClasses = classList(
+        moreMenuItemsContainerClass({
+          offsetTop: height,
+          fullWidthBreak: fullWidthDropdownMenuBreak
+        }),
+        moreMenuItemsClassName,
+        !showMoreMenuItems ? "hidden" : null
+      );
+
+      const menuItemClasses = classList(
+        menuItemClass({ height, minWidth: dropdownMenuMinWidth }),
+        moreMenuItemClass
+      );
+
+      const menuItems = () =>
+        moreMenuItems.map((item, index) => (
           <a
             className={menuItemClasses}
             href={item.url}
@@ -211,21 +213,20 @@ export class ResponsiveMenu extends Component {
             {item.content}
           </a>
         ));
-      }
 
-      return null;
-    };
+      return (
+        <div
+          className={menuClasses}
+          style={{ minWidth: dropdownMenuMinWidth }}
+          ref={el => {
+            this.moreMenuItems = el;
+          }}>
+          {menuItems()}
+        </div>
+      );
+    }
 
-    return (
-      <div
-        className={menuClasses}
-        style={{ minWidth: dropdownMenuMinWidth }}
-        ref={el => {
-          this.moreMenuItems = el;
-        }}>
-        {menuItems()}
-      </div>
-    );
+    return null;
   }
 
   renderMenuToggle() {
@@ -234,15 +235,17 @@ export class ResponsiveMenu extends Component {
 
     if (showMenuToggle) {
       return (
-        <MenuToggle
-          classname={menuToggleClass}
-          active={menuToggleActive}
-          color={menuToggleColor}
-          onToggle={this.toggleMoreMenuItems}
-          ref={menuToggle => {
-            this.toggle = menuToggle;
-          }}
-        />
+        <Fade in={showMenuToggle}>
+          <MenuToggle
+            classname={menuToggleClass}
+            active={menuToggleActive}
+            color={menuToggleColor}
+            onToggle={this.toggleMoreMenuItems}
+            ref={menuToggle => {
+              this.toggle = menuToggle;
+            }}
+          />
+        </Fade>
       );
     }
 

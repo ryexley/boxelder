@@ -57,9 +57,9 @@ export class MenuToggle extends Component {
   render() {
     const { active } = this.state;
     const { className, color, size } = this.props;
+    const containerClasses = classList(menuToggleContainerClass, className);
     const toggleClass = classList(
       menuToggleDefaultClass({ color }),
-      className,
       active ? "active" : null
     );
     const toggleStyle = {
@@ -68,7 +68,7 @@ export class MenuToggle extends Component {
     };
 
     return (
-      <div className={menuToggleContainerClass} style={toggleStyle}>
+      <div className={containerClasses} style={toggleStyle}>
         <a
           href="#"
           id="react-responsive-menu--menu-toggle"
