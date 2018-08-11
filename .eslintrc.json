@@ -17,8 +17,7 @@
     },
     "plugins": [
         "react",
-        "prettier",
-        "no-mixed-operators"
+        "prettier"
     ],
     "globals": {
         "expect": true,
@@ -27,7 +26,6 @@
     "rules": {
         "prettier/prettier": "warn",
         "no-mixed-operators": "off",
-        "no-mixed-operators/no-mixed-operators": "error",
         "import/no-extraneous-dependencies": "off",
         "import/prefer-default-export": "off",
         "react/jsx-filename-extension": "off",

@@ -6,7 +6,7 @@ const menuItems = [...Array(17).fill(null)].map((_, index) => ({
   content: `Menu Item ${index + 1}`
 }));
 
-<ResponsiveMenu
+<PriorityPlusNav
   menuItemData={menuItems}
   style={{ border: "1px dashed #ccc" }} />
 ```
@@ -50,7 +50,7 @@ const menuItems = [...Array(10).fill(null)].map((_, index) => ({
   content: `Menu Item ${index + 1}`
 }));
 
-<ResponsiveMenu
+<PriorityPlusNav
   className={ menuClass }
   menuToggleColor="#fff"
   moreMenuItemsClassName={ dropdownMenuItemsContainerClass }
@@ -105,7 +105,7 @@ const menuItems = [
   { url: "/#", content: "More" },
 ];
 
-<ResponsiveMenu
+<PriorityPlusNav
   className={ menuClass }
   menuToggleColor="#fff"
   moreMenuItemsClassName={ dropdownMenuItemsContainerClass }
@@ -151,7 +151,7 @@ const menuItems = [
   { url: "/#", content: "Support" }
 ];
 
-<ResponsiveMenu
+<PriorityPlusNav
   className={ menuClass }
   menuToggleColor="#fff"
   moreMenuItemsClassName={dropdownMenuItemsContainerClass}

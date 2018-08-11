@@ -1,1 +1,1 @@
-export { ResponsiveMenu } from "./components/responsive-menu";
+export { PriorityPlusNav } from "./components/priority-plus-nav";

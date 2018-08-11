@@ -11,7 +11,7 @@ import {
   moreMenuItemClass
 } from "./style";
 
-export class ResponsiveMenu extends Component {
+export class PriorityPlusNav extends Component {
   static propTypes = {
     /** Custom class for the menu */
     className: PropTypes.string,
