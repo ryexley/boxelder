@@ -1,6 +1,6 @@
 {
   "name": "@ryexley/boxelder",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "React Priority+ navigation menu component",
   "main": "src/index.js",
   "author": "Bob Yexley",

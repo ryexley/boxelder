@@ -12,7 +12,7 @@ export const menuToggleContainerStyle = {
 
 export const menuToggleContainerClass = css(menuToggleContainerStyle);
 
-export const menuToggleDefaultStyle = ({ color }) => ({
+export const menuToggleDefaultStyle = ({ color, activeColor }) => ({
   alignItems: "center",
   display: "flex",
   position: "relative",
@@ -43,6 +43,7 @@ export const menuToggleDefaultStyle = ({ color }) => ({
     },
 
     "span:before, span:after": {
+      background: activeColor || color,
       top: 0
     },
 
@@ -56,5 +57,5 @@ export const menuToggleDefaultStyle = ({ color }) => ({
   }
 });
 
-export const menuToggleDefaultClass = ({ color }) =>
-  css(menuToggleDefaultStyle({ color }));
+export const menuToggleDefaultClass = ({ color, activeColor }) =>
+  css(menuToggleDefaultStyle({ color, activeColor }));

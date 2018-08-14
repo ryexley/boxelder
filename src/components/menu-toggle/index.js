@@ -15,6 +15,8 @@ export class MenuToggle extends Component {
     size: PropTypes.string,
     /** The icon color */
     color: PropTypes.string,
+    /** The icon color when it is active/open. Will use `color` when no value is provided. */
+    activeColor: PropTypes.string,
     /** Function to be executed when the icon is clicked/toggled (default is noop). */
     onToggle: PropTypes.func.isRequired,
     /** Boolean indicator for the active state of the toggle. */
@@ -25,6 +27,7 @@ export class MenuToggle extends Component {
     className: null,
     size: "2rem",
     color: "#ccc",
+    activeColor: null,
     active: false
   };
 
@@ -56,10 +59,10 @@ export class MenuToggle extends Component {
 
   render() {
     const { active } = this.state;
-    const { className, color, size } = this.props;
+    const { className, color, activeColor, size } = this.props;
     const containerClasses = classList(menuToggleContainerClass, className);
     const toggleClass = classList(
-      menuToggleDefaultClass({ color }),
+      menuToggleDefaultClass({ color, activeColor }),
       active ? "active" : null
     );
     const toggleStyle = {
