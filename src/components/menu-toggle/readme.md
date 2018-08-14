@@ -10,7 +10,6 @@ const containerStyle = {
 
 <div style={containerStyle}>
   <MenuToggle
-    color="#ccc"
     onToggle={ ({ active }) => console.log(`Toggled: ${ active ? "active" : "not active" }`) } />
 </div>
 ```
@@ -45,7 +44,7 @@ const containerStyle = {
 <div style={containerStyle}>
   <MenuToggle
     color="linear-gradient(135deg, #3c0, #9f0)"
-    activeColor="linear-gradient(135deg, #999, #222)"
+    activeColor="linear-gradient(135deg, #f60, #f06)"
     onToggle={ ({ active }) => console.log(`Toggled: ${ active ? "active" : "not active" }`) } />
 </div>
 ```

@@ -12,7 +12,7 @@ import {
 } from "./style";
 
 /**
- * Priority+ navigation menu component
+ * Priority+ navigation menu component. Heavily adapted from https://codepen.io/zammer/pen/pbxJdo.
  */
 export class PriorityPlusNav extends Component {
   static propTypes = {

@@ -8,6 +8,8 @@ This is (yet another) [React](https://reactjs.org/) implemention of the Priority
 - Run `npm run dev` or `yarn run dev` to start up the instance of [React Styleguidist](https://react-styleguidist.js.org/), and then open your browser to [http://localhost:6060](http://localhost:6060).
 - Edit as necessary/desired, and let hot module reloading take care of the rest for you.
 
+Git commit messages should conform to the [conventional-changelog-eslint](https://www.npmjs.com/package/conventional-changelog-eslint) format, and will be verified by [semantic]release](https://github.com/semantic-release/semantic-release) during releases.
+
 ----
 [1]: More information about this pattern can be found at the following links:
 - [Michael Scharnagl's blog](https://justmarkup.com/log/2012/06/responsive-multi-level-navigation/)

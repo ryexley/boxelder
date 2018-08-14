@@ -18,6 +18,12 @@ const fadeState = {
 };
 
 const fadeDuration = 150;
+/**
+ * Uses a ReactTransitionGroup `Transition` to provide a custom fading in animation
+ * effect for the given child component. For the purposes of this package, it is
+ * used for applying a fade transition to the menu toggle component when it is
+ * rendered/shown in the menu.
+ */
 export const Fade = ({ in: inProp, children }) => (
   <Transition in={inProp} timeout={fadeDuration} appear>
     {state => {
@@ -28,7 +34,9 @@ export const Fade = ({ in: inProp, children }) => (
 );
 
 Fade.propTypes = {
+  /** Boolean prop indicating whether or not the transition should be applied. */
   in: PropTypes.bool,
+  /** The component(s) that the fade animation should be applied to. */
   children: PropTypes.node
 };
 
