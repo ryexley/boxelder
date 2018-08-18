@@ -1,8 +1,8 @@
 {
   "name": "@ryexley/boxelder",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "React Priority+ navigation menu component",
-  "main": "src/index.js",
+  "main": "dist/main.js",
   "author": "Bob Yexley",
   "license": "MIT",
   "private": false,
@@ -13,6 +13,7 @@
     "dev": "npx styleguidist server",
     "lint": "eslint --fix --cache ./src",
     "prettify": "prettier --write '{./,__{tests,mocks}__}/**/*.+(js|jsx)'",
+    "build": "webpack --config webpack.config.js --progress",
     "release": "semantic-release"
   },
   "devDependencies": {
@@ -22,6 +23,7 @@
     "@babel/preset-react": "^7.0.0-beta.54",
     "babel-eslint": "^8.2.6",
     "babel-loader": "^8.0.0-beta",
+    "clean-webpack-plugin": "^0.1.19",
     "conventional-changelog-eslint": "^3.0.0",
     "emotion": "^9.2.6",
     "eslint": "^4.19.1",
@@ -39,7 +41,9 @@
     "react-styleguidist": "^7.1.0",
     "react-transition-group": "^2.4.0",
     "semantic-release": "^15.9.8",
-    "webpack": "^4.16.2"
+    "webpack": "^4.16.2",
+    "webpack-bundle-analyzer": "^2.13.1",
+    "webpack-cli": "^3.1.0"
   },
   "peerDependencies": {
     "emotion": "^9.2.6",
